@@ -8,5 +8,5 @@ $phone = $data['phone'];
 
 $subject = 'Заявка';
 $message = "Email: $email. Phone: $phone";
-// mail( '29594299.105855@parser.amocrm.ru', 'Заявка Хмырова', $message);
-// mail( 'order@salesgenerator.pro', $subject, $message);
+mail( '29594299.105855@parser.amocrm.ru', 'Заявка Хмырова', $message);
+mail( 'order@salesgenerator.pro', $subject, $message);
