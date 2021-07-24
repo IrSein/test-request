@@ -1,0 +1,298 @@
+:root {
+    --black: #000000;
+    --transparent-grey: rgba(23, 23, 23, 50%);
+    --gray: #adadad;
+    --white: #ffffff;
+    --red: #ff0000;
+    --dark-red: #ab0000;
+    --green: #3bc86e;
+    --dark-green: #36aa60;
+}
+*,
+*:after,
+*:before {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+html {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 15px;
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    position: relative;
+}
+
+h1 {
+    font-size: 26px;
+    color: var(--black);
+    font-weight: bold;
+    margin-bottom: 57px;
+    width: 370px;
+    line-height: 32px;
+}
+
+.btn-order {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 350px;
+}
+
+#btnOrder {
+    background: var(--red);
+    border-radius: 5px;
+    font-size: 20px;
+    padding: 15px 0;
+    text-align: center;
+    color: var(--white);
+    width: 235px;
+    height: 70px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    border: none;
+}
+#btnOrder:hover {
+    background: var(--dark-red);
+}
+
+#modalOverlay {
+    background: rgba(0, 0, 0, 0.6);
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    overflow: scroll;
+}
+
+.hidden-modal {
+    transition: all 0.3s ease;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.show-modal {
+    opacity: 1;
+    visibility: visible;
+    transition: all 0.7s ease;
+}
+
+#modalClose {
+    position: absolute;
+    right: 18px;
+    top: 20px;
+    cursor: pointer;
+}
+
+#modalWindow {
+    background-color: var(--white);
+    max-width: 909px;
+    margin: 90px auto 0;
+    padding: 55px 50px 95px;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.offer-docs {
+    width: 326px;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 25px;
+}
+
+.order-wrap {
+    display: flex;
+    justify-content: space-between;
+}
+
+#form {
+    display: flex;
+    flex-direction: column;
+
+}
+
+.order-wrap--form {
+    width: 350px;
+    margin-top: 100px;
+}
+
+#messageSuc {
+    color: var(--green);
+    margin: 10px auto 0;
+    display: none;
+}
+
+input {
+    width: 350px;
+    height: 52px;
+    padding: 18px;
+    border: 1px solid var(--gray);
+    border-radius: 3px;
+    font-size: 15px;
+    color: var(--black);
+    margin-top: 10px;
+}
+
+input::placeholder {
+    color: var(--gray);
+}
+
+.input-email {
+    margin-bottom: 33px;
+}
+
+label {
+    font-size: 15px;
+}
+#validateEmail {
+    color: var(--red);
+}
+#validatePhone {
+    color: var(--red);
+}
+#submitBtn {
+    width: 350px;
+    height: 70px;
+    border-radius: 3px 3px 10px 10px;
+    background-color: var(--green);
+    border: none;
+    font-family: 'Open Sans Semibold';
+    border-bottom: 6px solid var(--dark-green);
+    margin-top: 15px;
+    color: var(--white);
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#submitBtn:hover {
+    background-color: var(--dark-green);
+}
+
+#submitBtn span {
+    margin-left: 22px;
+}
+
+.order-wrap--weight {
+    width: 180px;
+    font-size: 9px;
+    color: var(--gray);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 13px auto 0;
+}
+
+.order-wrap--img {
+    position: absolute;
+    left: 30px;
+}
+
+/*tablet*/
+@media (max-width: 991px) {
+    .order-wrap {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .order-wrap--offer {
+        display: flex;
+        flex-direction: column-reverse;
+    }
+
+    .order-wrap--img {
+        position: relative;
+    }
+
+    #modalWindow {
+        padding: 20px 20px 25px;
+        margin: 30px;
+    }
+
+    .offer-docs {
+        margin: -43px auto 30px;
+        z-index: 999;
+    }
+
+    h1 {
+        text-align: center;
+        margin: 0 auto 30px;
+    }
+
+    .order-wrap--form {
+        margin-top: 0;
+    }
+
+    .order-wrap--weight {
+        display: none;
+    }
+
+    .input-email {
+        margin-bottom: 25px;
+    }
+}
+
+/*mobile*/
+@media (max-width: 575px) {
+    #modalWindow {
+        margin: 30px 0;
+        padding: 20px 12px 25px;
+    }
+
+    .order-wrap--img {
+        left: 0;
+        max-width: 242px;
+        margin: auto;
+        width: 100%;
+    }
+
+    h1 {
+        font-size: 20px;
+        width: 100%;
+        line-height: 24px;
+    }
+
+    input {
+        width: 100%;
+    }
+
+    #submitBtn {
+        width: 100%;
+        height: 57px;
+    }
+
+    .offer-docs img {
+        height: 35px;
+    }
+
+    .offer-docs {
+        margin: -25px auto 30px;
+        width: 281px;
+    }
+
+    .order-wrap--form {
+        width: 100%;
+    }
+
+    label {
+        font-size: 13px;
+    }
+
+    button svg {
+        height: 30px;
+    }
+
+    #submitBtn span {
+        margin-left: 15px;
+    }
+}
